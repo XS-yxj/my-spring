@@ -1,6 +1,8 @@
 package com.yxj;
 
 import com.spring.ApplicationContext;
+import com.yxj.service.UserInterface;
+import com.yxj.service.UserService;
 
 /**
  * @Author: YuanXJ
@@ -9,11 +11,7 @@ import com.spring.ApplicationContext;
 public class Test {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ApplicationContext(AppConfig.class);
-        System.out.println(applicationContext.getBean("userService"));
-        System.out.println(applicationContext.getBean("userService"));
-        System.out.println(applicationContext.getBean("userService"));
-        System.out.println(applicationContext.getBean("orderService1"));
-        System.out.println(applicationContext.getBean("orderService1"));
-        System.out.println(applicationContext.getBean("orderService2"));
+        UserInterface userService = (UserInterface) applicationContext.getBean("userService");
+        userService.test();
     }
 }
